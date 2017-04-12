@@ -5,7 +5,7 @@ FROM ubuntu:16.04
 RUN apt-get update \
 	&& apt-get upgrade -y 
 
-RUN apt-get install g++ gcc cmake libopenblas-dev libmpich-dev curl python-numpy cython -y
+RUN apt-get install g++ gcc cmake libopenblas-dev libmpich-dev curl python-numpy cython swig ipython python-scipy -y
 
 
 # install petsc
@@ -31,7 +31,7 @@ RUN mkdir -p srcs  \
 	&& mkdir build \
 	&& cd build \
 	&& cmake -DCMAKE_INSTALL_PREFIX=/usr ../ \
-	&& make -j \
+	&& make -j 2 \
 	&& make install \
 	&& cd ../../ \
 	&& rm -rf STEPS-steps_3.0.1
