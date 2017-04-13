@@ -35,3 +35,6 @@ RUN mkdir -p srcs  \
 	&& make install \
 	&& cd ../../ \
 	&& rm -rf STEPS-steps_3.0.1
+
+# final fixes
+RUN mv /usr/lib/python2.7/site-packages/* /usr/lib/python2.7/dist-packages/
